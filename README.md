@@ -1,4 +1,4 @@
-# Neuron Splitting
+# Neuron Splitting with PyTorch
 ## Introduction
 Most of the deep learning neural nets used nowadays are of a fixed size - the number of neurons and layers doesn't change throughout training, only the model weights change.
 
