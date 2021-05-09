@@ -9,3 +9,5 @@ In this way we are expanding the network without changing it in the immediate mo
 Below I experiment with a 3 layer dense fully connected NN - the simplest way to try out this idea. The neurons to be split will always be in the hidden layer, since the input and output have fixed sizes defined by the dataset and the number of classes.
 
 [Randomly splitting a neuron with PyTorch notebook](https://nbviewer.jupyter.org/github/ilaiw/neuron-split/blob/main/neuron-split-2.ipynb)
+
+![Neuron split diagram](Neuron-split.jpg)
