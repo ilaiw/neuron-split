@@ -29,8 +29,6 @@ I ran each experiment 10 times, to see repeatability.
 ![params-vs-epoch](number-of-params.PNG)
 
 ## Results
-### Number of parameters for each experiment, per epoch
-![params-vs-epoch](number-of-params.PNG)
 
 ### Test accuracy - final value
 ![Test-accuracy-final-value](test-acc-final-val.PNG)
