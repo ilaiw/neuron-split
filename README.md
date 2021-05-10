@@ -11,3 +11,15 @@ Below I experiment with a 3 layer dense fully connected NN - the simplest way to
 [Randomly splitting a neuron with PyTorch notebook](https://nbviewer.jupyter.org/github/ilaiw/neuron-split/blob/main/neuron-split-2.ipynb)
 
 ![Neuron split diagram](Neuron-split.jpg)
+
+### Experiments
+* **No split**: This is the experiment's control. Here the hidden layer size is intialized as the max size which the others will reach. So model starts large as opposed to the rest where starts small and expands with splits.
+* **Random split**: A random index in the H dimension is selected to split.
+* **Split with max loss check**: Using the validation data, the activations in the hidden layer are iterated over and zeroed one at a time - while checking how thiss affects the overall loss. Basically how is the loss affected if I remove a neuron (similar concept to dropout). So we split the neuron that when removed, validation loss is maximized.
+* **Split with min loss check**: Same as above but minimum.
+* **Split with loss check probs**: Similar to `Split with max loss check`, but with softmax stochastic selection. Skipping this option for now.
+* **Split with max fire rate**: Fire rate is how often an neuron (after ReLU) has a non-zero value. Here we select the neuron with the maximal firing rate for the validation dataset.
+* **Split with min fire rate**: Same as previous but minimum.
+* **Split with .5 fire rate**: The neuron with a fire rate closest to 0.5 is split.
+
+I ran each experiment 10 times, to see repeatability.
