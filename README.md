@@ -12,6 +12,7 @@ Below I experiment with a 3 layer dense fully connected NN - the simplest way to
 
 ![Neuron split diagram](Neuron-split.jpg)
 
+## Methods
 ### Experiments
 * **No split**: This is the experiment's control. Here the hidden layer size is intialized as the max size which the others will reach. So model starts large as opposed to the rest where starts small and expands with splits.
 * **Random split**: A random index in the H dimension is selected to split.
@@ -23,3 +24,23 @@ Below I experiment with a 3 layer dense fully connected NN - the simplest way to
 * **Split with .5 fire rate**: The neuron with a fire rate closest to 0.5 is split.
 
 I ran each experiment 10 times, to see repeatability.
+
+### Number of parameters for each experiment, per epoch
+![params-vs-epoch](number-of-params.PNG)
+
+## Results
+### Number of parameters for each experiment, per epoch
+![params-vs-epoch](number-of-params.PNG)
+
+### Test accuracy - final value
+![Test-accuracy-final-value](test-acc-final-val.PNG)
+
+### Test loss - final value
+![Test-loss-final-value](test-loss-final-val.PNG)
+
+## Summary
+Surpisingly, the split runs were more variable than the fixed size one.
+It seems that the neuron splitting works best with half or max firing rate, but other options also have interesting results. The main problem with this type of network is that it introduces more hyperparameters, but it might be useful in certain applications.
+The main issue here seems to be when to split and which neuron to split. None of the methods seemed that great, so maybe these decisions need to be made by a separate NN.
+
+Thank you for reading! Feel free to reach out ilaiwai@gmail.com
